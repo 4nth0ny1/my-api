@@ -5,68 +5,68 @@ const app = express()
 
 const newspapers = [
     {
-        name: 'cityam',
-        address: 'https://www.cityam.com/london-must-become-a-world-leader-on-climate-change-action/',
+        name: 'techcrunch',
+        address: 'https://techcrunch.com/',
         base: ''
     },
     {
         name: 'thetimes',
-        address: 'https://www.thetimes.co.uk/environment/climate-change',
+        address: 'https://www.thetimes.co.uk',
         base: ''
     },
     {
         name: 'guardian',
-        address: 'https://www.theguardian.com/environment/climate-crisis',
+        address: 'https://www.theguardian.com',
         base: '',
     },
     {
         name: 'telegraph',
-        address: 'https://www.telegraph.co.uk/climate-change',
+        address: 'https://www.telegraph.co.uk',
         base: 'https://www.telegraph.co.uk',
     },
     {
         name: 'nyt',
-        address: 'https://www.nytimes.com/international/section/climate',
+        address: 'https://www.nytimes.com',
         base: '',
     },
     {
         name: 'latimes',
-        address: 'https://www.latimes.com/environment',
+        address: 'https://www.latimes.com',
         base: '',
     },
     {
         name: 'smh',
-        address: 'https://www.smh.com.au/environment/climate-change',
+        address: 'https://www.smh.com.au',
         base: 'https://www.smh.com.au',
     },
     {
         name: 'un',
-        address: 'https://www.un.org/climatechange',
+        address: 'https://www.un.org',
         base: '',
     },
     {
         name: 'bbc',
-        address: 'https://www.bbc.co.uk/news/science_and_environment',
+        address: 'https://www.bbc.co.uk',
         base: 'https://www.bbc.co.uk',
     },
     {
         name: 'es',
-        address: 'https://www.standard.co.uk/topic/climate-change',
+        address: 'https://www.standard.co.uk',
         base: 'https://www.standard.co.uk'
     },
     {
         name: 'sun',
-        address: 'https://www.thesun.co.uk/topic/climate-change-environment/',
+        address: 'https://www.thesun.co.uk',
         base: ''
     },
     {
         name: 'dm',
-        address: 'https://www.dailymail.co.uk/news/climate_change_global_warming/index.html',
+        address: 'https://www.dailymail.co.uk',
         base: ''
     },
     {
         name: 'nyp',
-        address: 'https://nypost.com/tag/climate-change/',
+        address: 'https://nypost.com',
         base: ''
     }
 ]
@@ -79,7 +79,7 @@ newspapers.forEach(newspaper => {
             const html = response.data
             const $ = cheerio.load(html)
 
-            $('a:contains("climate")', html).each(function () {
+            $('a:contains("self-driving")', html).each(function () {
                 const title = $(this).text()
                 const url = $(this).attr('href')
 
@@ -94,7 +94,7 @@ newspapers.forEach(newspaper => {
 })
 
 app.get('/', (req, res) => {
-    res.json('Welcome to my Climate Change News API')
+    res.json('Welcome to my Self-Driving News API')
 })
 
 app.get('/news', (req, res) => {
@@ -114,7 +114,7 @@ app.get('/news/:newspaperId', (req, res) => {
             const $ = cheerio.load(html)
             const specificArticles = []
 
-            $('a:contains("climate")', html).each(function () {
+            $('a:contains("self-driving")', html).each(function () {
                 const title = $(this).text()
                 const url = $(this).attr('href')
                 specificArticles.push({
