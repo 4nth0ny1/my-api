@@ -30,8 +30,8 @@ const newspapers = [
         base: '',
     },
     {
-        name: 'latimes',
-        address: 'https://www.latimes.com',
+        name: 'electrek',
+        address: 'https://electrek.co/',
         base: '',
     },
     {
@@ -79,7 +79,7 @@ newspapers.forEach(newspaper => {
             const html = response.data
             const $ = cheerio.load(html)
 
-            $('a:contains("self-driving")', html).each(function () {
+            $('a:contains("Self-Driving")', html).each(function () {
                 const title = $(this).text()
                 const url = $(this).attr('href')
 
@@ -114,7 +114,7 @@ app.get('/news/:newspaperId', (req, res) => {
             const $ = cheerio.load(html)
             const specificArticles = []
 
-            $('a:contains("self-driving")', html).each(function () {
+            $('a:contains("Self-Driving")', html).each(function () {
                 const title = $(this).text()
                 const url = $(this).attr('href')
                 specificArticles.push({
