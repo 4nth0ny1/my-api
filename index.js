@@ -6,7 +6,7 @@ const app = express();
 const newspapers = [
     {
         name: 'thetimes', 
-        address: 'http://www.thetime.co.uk',
+        address: 'http://www.thetimes.co.uk',
         base: ''
     }
 ];
@@ -23,6 +23,16 @@ app.get('/news', (req, res) => {
 })
 
 // scrape the data 
+app.get('/news/:newspaperId', (req, res) => {
+    const newspaperId = req.params.newspaperId;
 
+    const newspaperAddress = newspapers.filter(newspaper => newspaper.name == newspaperId)[0].address;
+    const newspaperBase = newspapers.filter(newspaper => newspaper.name == newspaperId)[0].base;
 
-// create the server on port 
+    
+})
+
+// express server
+app.listen(3001, ()=> {
+    console.log('your server is running on 3001')
+});
