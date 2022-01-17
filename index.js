@@ -16,7 +16,7 @@ const newspapers = [
     },
     {
         name: 'guardian',
-        address: 'https://www.theguardian.com',
+        address: 'https://www.theguardian.com/us/technology',
         base: '',
     },
     {
@@ -35,9 +35,9 @@ const newspapers = [
         base: '',
     },
     {
-        name: 'smh',
-        address: 'https://www.smh.com.au',
-        base: 'https://www.smh.com.au',
+        name: 'wired',
+        address: 'https://www.wired.com/',
+        base: 'https://www.wired.com/',
     },
     {
         name: 'un',
