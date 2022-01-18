@@ -40,8 +40,8 @@ const newspapers = [
         base: 'https://www.wired.com/',
     },
     {
-        name: 'un',
-        address: 'https://www.un.org',
+        name: 'theregister',
+        address: 'https://www.theregister.com/',
         base: '',
     },
     {
@@ -50,18 +50,18 @@ const newspapers = [
         base: 'https://www.bbc.co.uk',
     },
     {
-        name: 'es',
-        address: 'https://www.standard.co.uk',
-        base: 'https://www.standard.co.uk'
+        name: 'barrons',
+        address: 'https://www.barrons.com/topics/technology?mod=BOL_TOPNAV',
+        base: 'https://www.barrons.com'
     },
     {
-        name: 'sun',
-        address: 'https://www.thesun.co.uk',
+        name: 'axios',
+        address: 'https://www.axios.com/technology/automation-and-ai/',
         base: ''
     },
     {
-        name: 'dm',
-        address: 'https://www.dailymail.co.uk',
+        name: 'yahoo',
+        address: 'https://finance.yahoo.com/tech/',
         base: ''
     },
     {
